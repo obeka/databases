@@ -34,7 +34,7 @@ SELECT
 FROM authors a
 JOIN authors_papers ap
 USING(author_no)
-WHERE a.gender = 'f'
+WHERE a.gender = 'f';
 `
 
 connection.query(sql_2, (err, results, fields) => {

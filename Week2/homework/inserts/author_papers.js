@@ -32,15 +32,15 @@ const author_papers = [
         paper_id: 8
     },
     {
-        author_no: 104,
+        author_no: 107,
         paper_id: 9
     },
     {
-        author_no: 104,
+        author_no: 108,
         paper_id: 10
     },
     {
-        author_no: 104,
+        author_no: 109,
         paper_id: 11
     },
     {
@@ -192,7 +192,7 @@ const author_papers = [
         paper_id: 18
     },
     {
-        author_no: 104,
+        author_no: 106,
         paper_id: 19
     },
     {
