@@ -42,9 +42,9 @@ const createAuthorTable = async () => {
     await Promise.all[execQuery(CREATE_A_DATABASE), execQuery(SELECT_DB), execQuery(CREATE_AUTHOR_TABLE), execQuery(ADD_COLUMN_TO_AUTHOR_TABLE),
     execQuery(ADD_FK_TO_AUTHOR_TABLE)];
 
-    await Promise.all(authors.map(author =>
-      execQuery('INSERT INTO authors SET ?', author)
-    ));
+    authors.forEach(async (author) =>
+      await execQuery('INSERT INTO authors SET ?', author)
+    );
 
   } catch (error) {
     console.error(error);
