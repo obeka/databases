@@ -1,5 +1,6 @@
 const util = require('util');
 const mysql = require('mysql');
+const { exec } = require('child_process');
 
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -38,8 +39,14 @@ const createAccountTableS = async () => {
 
     connection.connect();
 
+    const operations = [CREATE_A_DATABASE, SELECT_DB, CREATE_ACCOUNT_TABLE, CREATE_ACCOUNT_CHANGES_TABLE];
+
   try {
-    await Promise.all[execQuery(CREATE_A_DATABASE),execQuery(SELECT_DB),execQuery(CREATE_ACCOUNT_TABLE),execQuery(CREATE_ACCOUNT_CHANGES_TABLE)]; 
+    /* await Promise.all[execQuery(CREATE_A_DATABASE),execQuery(SELECT_DB),execQuery(CREATE_ACCOUNT_TABLE),execQuery(CREATE_ACCOUNT_CHANGES_TABLE)];  */
+    
+    for(let i = 0; i < operations.length; i++) {
+      await execQuery(operations[i]);
+    }
   } catch (error) {
     console.error(error);
   }
